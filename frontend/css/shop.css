@@ -1,0 +1,64 @@
+/* ============================================
+   Bloom & Co — Shop Page Styles (shop.css)
+   ============================================ */
+
+/* ── Page Header ── */
+.shop-header {
+  padding: 8rem 6rem 3rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+
+/* ── Shop Layout ── */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  padding: 3rem 6rem 6rem;
+}
+
+/* ── Sidebar ── */
+.sidebar { position: sticky; top: 100px; height: fit-content; }
+.sidebar-section { margin-bottom: 2.5rem; }
+.sidebar-title {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text); margin-bottom: 1rem;
+  padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
+}
+.filter-btn {
+  width: 100%; text-align: left; background: none; border: none;
+  padding: 0.55rem 0.8rem; font-size: 0.84rem;
+  color: var(--text); cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  border-radius: var(--radius);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.filter-btn:hover { background: #f0e8e0; color: var(--rose); }
+.filter-btn.active { background: var(--rose); color: var(--white); }
+
+/* ── Products Grid ── */
+.products-area .top-bar {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 1.8rem;
+}
+.sort-select {
+  padding: 0.5rem 1rem; border: 1px solid var(--border);
+  background: var(--white); font-size: 0.82rem;
+  color: var(--text); outline: none; cursor: pointer;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+/* ── Responsive Shop ── */
+@media (max-width: 1024px) {
+  .shop-layout { grid-template-columns: 1fr; padding: 2rem; }
+  .sidebar { position: static; }
+  .products-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 600px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
